@@ -28,21 +28,15 @@ const PaymentPage = ({ username }) => {
     getData();
   }, []);
 
+  const success = () => toast("Payment Done");
+
+
   useEffect(() => {
     if (searchParams.get("paymentdone") == "true") {
-      toast("Payment Done!!!", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      
     }
     router.push(`/${username}`);
-  }, []);
+  },[] );
 
   const handleChange = (e) => {
     setpaymentform({ ...paymentform, [e.target.name]: e.target.value });
